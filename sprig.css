@@ -67,6 +67,19 @@ svg#svgBoard {
   border-radius: 0.4em;
 }
 
+#textpane a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#textpane a:link {
+  color: #e03020;
+}
+
+#textpane a:visited {
+  color: #346;
+}
+
 .collapsedPane #textpane {
   display: none;
 }
@@ -96,6 +109,10 @@ svg#svgBoard {
   padding-bottom: 1em;
 }
 
+.textcontent ul {
+  list-style-type: circle;
+}
+
 .editing {
   border: 4px red dashed;
 }
@@ -107,12 +124,22 @@ svg#svgBoard {
 
 .control-link {
   color: rgba(255, 255, 255, 0.6);
-  float: right;
   margin-right: 8px;
   margin-top: 8px;
   cursor: pointer;
+}
+
+.findunread-link {
+  float: right;  
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.down-link {
+  display: block;
+  margin-top: 8px;
+  margin-left: 4px;
+  font-size: 22px;
 }
 
 section {
