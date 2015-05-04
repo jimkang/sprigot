@@ -4,6 +4,7 @@ html {
 
 body {
 	font-family: garamond, adobe-garamond-pro, serif;
+  font-size: 24px;
   background-color: #eee;
 
   color: #404044;
@@ -12,32 +13,14 @@ body {
   height: 100%;
 }
 
-.pane {
-  -webkit-flex: 1 1 auto;
-  flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  width: 44%;
-  min-width: 200px;
-}
-
-.textpane {
-  font-size: 24px;
-  margin-left: 8px;
-}
-
 .bloge {
   margin-top: 0.2em;
   padding-bottom: 4em;
 }
 
-.bloge .textpane {
-  width: 66%;
-  margin-top: 0.7em;
-}
-
 .bloge .title {
   font-family: brandon-grotesque, 'Helvetica Neue', Helvetica, sans-serif;
-  font-size: 42px;
+  font-size: 2em;
   text-transform: uppercase;
   margin-left: -2px;
 }
@@ -47,78 +30,6 @@ body {
   font-size: 18px;
   margin-top: 1em;
   float: right;
-}
-
-.textpane a {
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.textpane a:link {
-  color: #e03020;
-}
-
-.textpane a:visited {
-  color: #346;
-}
-
-/* TODO: This class is no longer used. Replace it. */
-
-.collapsedPane .textpane {
-  display: none;
-}
-
-#graphPane {
-  min-width: 200px;
-}
-
-@-moz-document url-prefix(http) {
-  #graphPane {
-    height: 100%; /* Need for Firefox */
-  }
-}
-
-.textcontent {
-  font-weight: normal;  
-  font-size: 20px;
-  padding-left: 1.2em;
-  padding-right: 1em;
-  padding-top: 1em;
-  padding-bottom: 1em;
-}
-
-.textcontent ul {
-  list-style-type: circle;
-}
-
-.editing {
-  border: 4px red dashed;
-}
-
-.notification {
-  border: 2px blue dotted;
-  -webkit-border-radius: 1em; border-radius: 1em;
-}
-
-.control-link {
-  color: rgba(255, 255, 255, 0.6);
-  margin-right: 8px;
-  margin-top: 8px;
-  cursor: pointer;
-}
-
-.findunread-link {
-  float: right;  
-  padding-left: 8px;
-  padding-right: 8px;
-}
-
-.info-note {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.25);
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 1em;
 }
 
 section {
@@ -147,62 +58,66 @@ section {
   width: 100% /* needed for Firefox */
 }
 
-#graphPane {
-  order: 1;
-  -webkit-box-ordinal-group: 1;
-}
-
-#nongraphPane {
-  order: 3;
-  -webkit-box-ordinal-group: 3;
-}
-
 .sprig {
-  /*border: 1px solid #e40;*/
+  max-width: 640px;
+  margin-top: 0.8em;
+  padding-left: 1.0em;
 }
 
+ul.sprig {
+  list-style-type: none;
+}
+
+/*section > .sprig > li > .sprig {
+}
+*/
 .sprigbody {
   padding-top: 0.5em;
 }
 
 .level-1 {
   margin-left: 0;
+  margin-top: 0.8em;
   margin-bottom: 0.5em;
-}
-
-.level-1 {
-  margin-left: 0;
-  margin-bottom: 0.5em;
+  padding-left: 0;
 }
 
 .level-2 {
-  margin-left: 5%;
-  max-width: 65%;
-  color: #58585c;
+  margin-top: 0.5em;
+  padding-left: 0;
 }
 
-.level-2.textpane {
-  margin-top: 0.5em;
-  margin-bottom: 0.25em;
+/*
+.level-3 {
+  margin-top: 0.8em;
+  padding-left: 1.0em;
+}
+
+.level-4 {
+  margin-top: 0.8em;
+  padding-left: 1.0em;
+}
+
+*/
+
+.level-1 .title {
+  font-size: 1.5em;
 }
 
 .level-2 .title {
-  font-size: 21px;
-  color: #404044;
-}
-
-.level-3 {
-  /*margin-left: %;*/
-  max-width: 50%;
-}
-
-.level-3.textpane {
-  margin-top: 0.25em;
-  margin-bottom: 0.25em;
+  font-size: 1.2em;
 }
 
 .level-3 .title {
-  font-size: 18px;
+  font-size: 1.1em;
+}
+
+.level-4 .title {
+  font-size: 1.1em;
+}
+
+.level-5 .title {
+  font-size: 1.1em;
 }
 
 .aside {
@@ -235,117 +150,29 @@ section {
   margin-bottom: 0;
 }
 
-.click-to-display,.displaying-hidden {
+.click-to-display > .title, .displaying-hidden > .title {
   cursor: pointer;
 }
 
-.click-to-display .sprigbody {
-  display: none;
+.hidden {
+  display: none;  
 }
 
-.displaying-hidden .sprigbody {
-  display: block;  
-  cursor: pointer;
+.displaying-hidden {
+  display: block;
 }
 
-/* Firefox */
-@-moz-document url-prefix(http) {
-  #nongraphPane {
-    /* When the content is taller than the window, this will let it scroll. */
-    height: 100%;
-  }
+a:link {
+  color: hsl(230, 38%, 37%);
 }
 
-
-/* iPad */
-
-@media only screen and (min-device-width : 768px) and (max-device-height: 1024px) {
-  #svgBoard {
-    height: 768px;
-  }
+a:visited {
+  color: hsl(0, 0%, 32%);
+  font-weight: normal;
 }
 
-@media only screen and (min-device-width : 1024px) and (max-device-height: 768px) {
-  #svgBoard {
-    height: 512px;
+@media (max-width: 568px) {
+  body {
+    font-size: 18px;
   }
 }
-
-/* Mobile */
-
-@media only screen and (max-device-height: 568px) {
-  /* Works on iOS 7 */
-  section {
-    /*height: 568px;*/
-    width: 320px;
-  }
-
-  #graphPane {
-    order: 3;
-    -webkit-order: 3;
-    -webkit-box-ordinal-group: 3;
-    flex: 1 6 100px;
-    -webkit-flex: 1 0 100%;
-    width: 95%;
-  }
-
-  #nongraphPane {
-    width: 100%;
-    -webkit-order: 1;
-    order: 1;
-    -webkit-box-ordinal-group: 1;
-    margin-top: 8px;
-    flex: 1 1 80%;
-    -webkit-flex: 1 0 100%;
-  }
-
-  /* Works on iOS 6 */
-  section.is-not-ios-seven {
-    height: 568px;
-
-    flex-direction: column;
-    -webkit-flex-direction: column;
-
-    /* Without this, Safari won't respect -webkit-flex-direction. */
-    -webkit-box-orient: vertical;
-  }
-
-  #graphPane.is-not-ios-seven {
-    order: 3;
-    -webkit-box-ordinal-group: 3;
-    flex: 1 6 100px;
-    -webkit-flex: 1 6 100px;
-    width: 95%;
-  }
-
-  #nongraphPane.is-not-ios-seven {
-    width: 100%;
-    order: 1;
-    -webkit-box-ordinal-group: 1;
-    margin-top: 8px;
-    flex: 1 1 80%;
-    -webkit-flex: 3 1 80%;
-  }
-  
-
-  #svgBoard {
-    height: 250px;
-  }
-
-  .expandedPane {
-    flex: 1 1 auto;
-    -webkit-flex: 1 1 auto;
-  }
-
-  .expandedPane #svgBoard {
-    height: 100%;
-  }
-
-  .collapsedPane {
-    max-height: 0;
-    height: 0;
-    flex: 1 1 0;
-    -webkit-flex: 1 1 0;
-  }
-}
-
